@@ -1,17 +1,15 @@
-const puppeteer = require('puppeteer')
-
+const puppeteer = require('puppeteer');
 const takeScreenshot = async()=>{
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    const options={
-        path: 'images/website.png',
-        fullPage:true,
-        omitBackground:true
-    }
-    await page.goto("https://www.google.com")
-    await page.screenshot(options)
-
-    await browser.close()
+  const browser = await puppeteer.launch();
+  const page =await browser.newPage();
+  const option={
+    path: 'images/website.png',
+    fullpage:true,
+    omitBackground: true
+  }
+  await page.goto("https://www.google.com")
+  await page.screenshot(option)
+  await browser.close()
 }
 
 takeScreenshot();
