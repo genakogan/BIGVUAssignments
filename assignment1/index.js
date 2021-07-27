@@ -4,12 +4,14 @@ const express = require("express"),
       fs = require('fs'),
       path = require('path'),
       app = express(),
-      port = 3000;
+      port = 3000,
+      config = require('./input.json');
+
+
+      
 
 app.get("/", (requset, response) => {
   response.send("In process...");
-
-
 
 const takeScreenshot = async()=>{
   const browser = await puppeteer.launch();
@@ -20,7 +22,7 @@ const takeScreenshot = async()=>{
     fullpage:true,
     omitBackground: true
   }
-  await page.goto("https://www.google.com")
+  await page.goto(config.url)
   await page.screenshot(option)
   await browser.close()
 
