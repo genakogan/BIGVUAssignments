@@ -1,5 +1,8 @@
 const puppeteer = require('puppeteer');
-var videoShow = require('videoshow')
+var videoShow = require('videoshow'),
+    fs = require('fs'),
+    path = require('path');
+
 
 const takeScreenshot = async()=>{
   const browser = await puppeteer.launch();
@@ -15,7 +18,7 @@ const takeScreenshot = async()=>{
 
 
 var images=["images/website.png"]
-var videoOptions={
+let videoOptions={
     loop:10,
     fps: 25,
     transition: true,
@@ -27,19 +30,22 @@ var videoOptions={
     audioChannels: 2,
     format: "mp4",
     pixelFormat: "yuv420p",
+    path: "video/video.mp4"
 };
 videoShow(images,videoOptions)
-.save("video/video.mp4")
-.path()
+.save(videoOptions.path)
 .on('start', function(command){
-    console.log("conversion started"+command)
+    console.log("conversion started\t"+command)
 })
 .on('error',function(err,stdout,stderr){
-    console.log("some error occures"+err)
+    console.log("some error occures\t"+err)
 })
 .on('end',function(output){
-    console.log("Conversion complited"+output)
+    console.log("Conversion complited\t"+ output)
 })
 }
 
+var filePath = path.join(__dirname, 'video.mp4');
+fs.writeFileSync(path.resolve(__dirname, 'output.json'), JSON.stringify(filePath));
+console.log("File Path\t"+filePath);
 takeScreenshot();
