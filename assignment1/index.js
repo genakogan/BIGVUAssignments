@@ -1,12 +1,22 @@
+//var http = require('http');
+const express = require("express");
 const puppeteer = require('puppeteer');
 var videoShow = require('videoshow'),
     fs = require('fs'),
     path = require('path');
 
+const app = express();
+const port = 3000;
+
+app.get("/", (requset, response) => {
+  response.send("Send POST requset to start the process");
+
+
 
 const takeScreenshot = async()=>{
   const browser = await puppeteer.launch();
-  const page =await browser.newPage();
+  const page =await browser
+  .newPage();
   const option={
     path: 'images/website.png',
     fullpage:true,
@@ -46,6 +56,11 @@ videoShow(images,videoOptions)
 }
 
 var filePath = path.join(__dirname, 'video.mp4');
-fs.writeFileSync(path.resolve(__dirname, 'output.json'), JSON.stringify(filePath));
-console.log("File Path\t"+filePath);
+fs.writeFileSync(path.resolve(__dirname, 'output.json'), JSON.stringify({file: filePath}));
+//console.log("File Path\t"+filePath);
 takeScreenshot();
+});
+// start the server
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
