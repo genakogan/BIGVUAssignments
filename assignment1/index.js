@@ -29,7 +29,8 @@ var videoOptions={
     pixelFormat: "yuv420p",
 };
 videoShow(images,videoOptions)
-.save("slideshow.mp4")
+.save("video/video.mp4")
+.path()
 .on('start', function(command){
     console.log("conversion started"+command)
 })
