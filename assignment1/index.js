@@ -1,15 +1,13 @@
-//var http = require('http');
-const express = require("express");
-const puppeteer = require('puppeteer');
-var videoShow = require('videoshow'),
-    fs = require('fs'),
-    path = require('path');
-
-const app = express();
-const port = 3000;
+const express = require("express"),
+      puppeteer = require('puppeteer'),      
+      videoShow = require('videoshow'),
+      fs = require('fs'),
+      path = require('path'),
+      app = express(),
+      port = 3000;
 
 app.get("/", (requset, response) => {
-  response.send("Send POST requset to start the process");
+  response.send("In process...");
 
 
 
@@ -62,5 +60,5 @@ takeScreenshot();
 });
 // start the server
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`http://localhost:${port}`)
 })
