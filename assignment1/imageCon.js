@@ -1,9 +1,7 @@
 var videoShow = require('videoshow')
 
 var images=[
-    
         "images/website.png"
-    
 ]
 var videoOptions={
     loop:10,
