@@ -1,4 +1,5 @@
 # BIGVU-assignments
+# Assignment 1
 ## Getting started
 ```
 1. install ffmpeg
