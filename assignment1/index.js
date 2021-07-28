@@ -95,7 +95,5 @@ app.post("/",bodyParser,async(req, res) => {
 
 //  bind and listen the connections on the specified host and port
 app.listen(nPort, () => {
-  console.log(
-    `http://localhost:${nPort}`
-  );
+  console.log(`http://localhost:${nPort}`);
 });
