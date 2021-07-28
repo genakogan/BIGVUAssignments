@@ -1,4 +1,4 @@
-# BIGVU
+# BIGVU-assignment
 ## Assignment 1
 ## Getting started
 ```
