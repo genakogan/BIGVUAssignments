@@ -71,10 +71,10 @@ const converting = async(req,res)=>{
     });
 
   //  path.join([...paths]) -> Returns: <string> use for saving the path
-  const outputFilePath = path.join(__dirname, videoOptions.name); 
+  const filePath = path.join(__dirname, videoOptions.name); 
   
   // send the result
-  res.send({ file: outputFilePath }); 
+  res.send({ file: filePath }); 
 }
 
 // representation of the specified resource
