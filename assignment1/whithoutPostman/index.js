@@ -29,15 +29,13 @@ const express = require("express"),
 
 app.get("/", (requset, response) => {
   response.send("In process...");
-
 const takeScreenshot = async()=>{
   const browser = await puppeteer.launch();
   const page =await browser.newPage();
   await page.goto(config.url)
   await page.screenshot(option)
   await page.close()
-  await browser.close()
-  
+  await browser.close()  
 videoShow(images,videoOptions)
 .save(videoOptions.path)
 .on('start', function(command){
