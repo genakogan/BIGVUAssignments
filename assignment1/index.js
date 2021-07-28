@@ -1,11 +1,12 @@
 const express = require("express"),
       puppeteer = require('puppeteer'),      
       videoShow = require('videoshow'),
+      config = require('./input.json'),
       fs = require('fs'),
       path = require('path'),
       app = express(),
-      port = 3000,
-      config = require('./input.json');
+      port = 3000;
+      
 
 
       
@@ -24,6 +25,7 @@ const takeScreenshot = async()=>{
   }
   await page.goto(config.url)
   await page.screenshot(option)
+  await page.close()
   await browser.close()
 
 
