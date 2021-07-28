@@ -62,7 +62,3 @@ fs.writeFileSync(path.resolve(__dirname, 'output.json'), JSON.stringify({file: f
 //console.log("File Path\t"+filePath);
 takeScreenshot();
 });
-// start the server
-app.listen(port, () => {
-  console.log(`http://localhost:${port}`)
-})
