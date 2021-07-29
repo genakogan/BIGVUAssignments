@@ -2,7 +2,7 @@ const express = require("express"),
     fs = require("fs"),
     puppeteer = require("puppeteer"),
     videoShow = require("videoshow"),
-    bodyParser=require("body-parser").json(),
+    bParser=require("body-parser").json(),
     app = express(),
 
     //8080 - address of the port on which the host server is listening for requests.
@@ -78,15 +78,16 @@ const converting = async(req,res)=>{
 }
 
 // representation of the specified resource
-// Response: From Server to Client
-// Request : From Client to Server
+// res: From Server to Client
+// req : From Client to Server
 app.get("/", (req, res) => {
   res.send("Get Request Called");
 });
 
 //  submits data to be processed to the identified resource.
-app.post("/",bodyParser,async(req, res) => {
+app.post("/",bParser,async(req, res) => {
   try {
+    // asynchronous methods - line 34
     converting(req,res);
   } catch (error) {
     console.log("Some error occures: " + error.message);
