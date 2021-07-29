@@ -1,16 +1,15 @@
-const express = require("express"),
-    fs = require("fs"),
-    puppeteer = require("puppeteer"),
-    videoShow = require("videoshow"),
-    bParser=require("body-parser").json(),
-    app = express(),
+const express = require("express");
+const puppeteer = require("puppeteer");
+const videoShow = require("videoshow");
+const bParser=require("body-parser").json();
+const app = express();
 
     //8080 - address of the port on which the host server is listening for requests.
-    nPort = 8080,
-    path = require("path"),
+const nPort = 8080;
+const path = require("path");
    
     // video options
-    videoOptions = {
+const videoOptions = {
         fps: 25,
         loop: 10,
         transition: false,
@@ -20,10 +19,10 @@ const express = require("express"),
         format: "mp4",
         pixelFormat: "yuv420p",
         name: "video.mp4"
-    },
+    };
 
     // screenshot the website
-    option={
+const option={
       screenshotName: "website.png",
       path: "website.png", 
       fullPage: true, 
