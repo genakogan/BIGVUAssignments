@@ -30,7 +30,7 @@ const express = require("express"),
       omitBackground: true
     };
 
-// make screenshot and convert to MP4
+// asynchronous methods - make screenshot and convert to MP4 
 const converting = async(req,res)=>{
   console.log("Process started");
 
