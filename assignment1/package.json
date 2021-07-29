@@ -8,14 +8,14 @@
     "express": "^4.17.1",
     "ffmpeg": "0.0.4",
     "puppeteer": "^10.1.0",
-    "videoshow": "^0.1.12",
-    "author": "Genady Kogan"
+    "videoshow": "^0.1.12"
+   
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Genady Kogan",
   "license": "ISC"
 }
